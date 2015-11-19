@@ -39,5 +39,5 @@ class StaffController < ApplicationController
 
 	def staff_params
 		params.require(:staff).permit(:fname, :lname, :email)
-	end
+		
 end

@@ -1,18 +1,45 @@
 Rails.application.routes.draw do
   
-  get 'admin/index'
+  #get 'schedule/index'
 
-  get 'admin/new'
+  #get 'schedule/new'
 
-  get 'admin/show'
+  #get 'schedule/create'
 
-  get 'admin/edit'
+  #get 'schedule/show'
 
-  get 'admin/create'
+  #get 'schedule/edit'
 
-  get 'admin/update'
+  #get 'schedule/update'
 
-  get 'admin/destroy'
+  #get 'schedule/destroy'
+  resource :schedules
+
+  root 'home#index'
+
+  get 'home/help'
+
+  get 'home/contact'
+
+  get 'home/create'
+
+  get 'home/about'
+  
+
+
+  #get 'admin/index'
+
+  #get 'admin/new'
+
+  #get 'admin/show'
+
+  #get 'admin/edit'
+
+  #get 'admin/create'
+
+  #get 'admin/update'
+
+  #get 'admin/destroy'
 
   devise_for :admins
    # root 'user#index'
@@ -31,8 +58,9 @@ Rails.application.routes.draw do
 
   devise_for :users
 
- resource :admin do
-  resource :staff
+ resource :admins do
+  resource :staffs
+end
 
  
   #get 'user/new'
