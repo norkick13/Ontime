@@ -1,19 +1,25 @@
 Rails.application.routes.draw do
   
+  #get 'comments/create'
+
+  #get 'comments/destroy'
+
   #get 'schedule/index'
 
   #get 'schedule/new'
 
   #get 'schedule/create'
 
-  #get 'schedule/show'
+  # get 'schedule/show'
 
   #get 'schedule/edit'
 
   #get 'schedule/update'
 
   #get 'schedule/destroy'
-  resource :schedules
+  resources :schedules do
+    resources :comments
+  end
 
   root 'home#index'
 
@@ -58,8 +64,8 @@ Rails.application.routes.draw do
 
   devise_for :users
 
- resource :admins do
-  resource :staffs
+ resources :admins do
+  resources :staffs
 end
 
  

@@ -1,0 +1,26 @@
+<div id="post_content">
+<h1 class="title">
+    <%= @schedule.title %>
+</h1>
+
+<p class="date">
+submitted <%= time_ago_in_words(@schedule.created_at) %> Ago
+<% if user_signed_in? %>
+| <%=link_to 'Edit', edit_schedule_path(@schedule) %>
+| <%= link_to 'Delete', schedule_path(@schedule), method: :delete, data: {confirm: 'Are You Sure?'} %>
+<% end %>
+</p>
+
+<p class="body">
+<%= @schedule.body %>
+</p>
+
+<div id="comments">
+<h2><%= @schedule.comments.count %> Comments</h2>
+<%= render @schedule.comments %>
+
+<h3>Add a comment:</h3>
+<%= render "comments/form" %>
+
+</div>
+</div>
