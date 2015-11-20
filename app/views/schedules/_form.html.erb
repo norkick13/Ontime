@@ -1,7 +1,7 @@
 <%= form_for @schedule do |f| %>
-<% if @schedule.error.any? %>
-<div class="errors">
-	<h2><%=Pluralize(@schedules.errors.count, "error") %> prevented this post from saving</h2>
+<% if @schedule.errors.any? %>
+<div class="error">
+	<h2><%= Pluralize(@schedule.errors.count, "error") %> prevented this schedule from saving</h2>
 	<ul>
 		<% @schedule.errors_full_messages.each do |msg| %>
 		<li><%= msg %></li>
@@ -9,6 +9,7 @@
 	</ul>
 </div>
 <% end %>
+
 <p>
 	<%= f.label :admin_code %><br>
 	<%= f.text_field :admin_code %>
@@ -39,7 +40,7 @@
 </p>
 <p>
 	<%= f.label :staff_email %><br>
-	<%= f.text_field :staff %>
+	<%= f.text_field :staff_email %>
 </p>
 <p>
 	<%= f.label :body %><br>

@@ -8,9 +8,8 @@ class SchedulesController < ApplicationController
   end
 
   def create
-    @schedule = Schedule.find(schedule_params)
-
-    if @schedule.save
+    @schedule = Schedule.new(schedule_params)
+      if @schedule.save
       redirect_to @schedule
     else
       render 'new'
@@ -28,7 +27,7 @@ end
   def update
     @schedule = Schedule.find(params[:id])
 
-    if @schedule.update(params[:schedule].permit(:admin_code, :admin_name, :admin_email, :staff_fname, :staff_lname, :staff_email, :text, :title))
+    if @schedule.update(schedule_params)
       redirect_to schedules_path
     else
       render 'edit'
@@ -45,6 +44,6 @@ end
   private
 
   def schedule_params
-    params.require[:schedule].permit(:admin_code, :admin_name, :admin_email, :staff_fname, :staff_lname, :staff_email, :text, :title)
+    params.require(:schedule).permit(:admin_code, :admin_name, :admin_email, :staff_fname, :staff_lname, :staff_email, :body, :title)
    end
 end

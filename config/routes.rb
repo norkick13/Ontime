@@ -4,32 +4,35 @@ Rails.application.routes.draw do
 
   #get 'comments/destroy'
 
-  #get 'schedule/index'
+  
 
-  #get 'schedule/new'
+  get '/new', to: 'schedules#new'
 
-  #get 'schedule/create'
+  get  '/create', to: 'schedules#create'
 
-  # get 'schedule/show'
+   get '/show', to: 'schedules#show'
 
-  #get 'schedule/edit'
+  get  '/edit', to: 'schedule#edit'
 
-  #get 'schedule/update'
+  get '/update', to: 'schedule#update'
 
-  #get 'schedule/destroy'
+  get '/destroy', to: 'schedule#destroy'
+  
+root 'schedules#index'
+
   resources :schedules do
     resources :comments
   end
 
-  root 'home#index'
+  #get 'home#index'
 
-  get 'home/help'
+  get '/help', to: 'home#help'
 
-  get 'home/contact'
+  get  '/contact', to:  'home#contact'
 
-  get 'home/create'
+  get  '/create', to: 'home#create'
 
-  get 'home/about'
+  get   '/about', to: 'home#about'
   
 
 
