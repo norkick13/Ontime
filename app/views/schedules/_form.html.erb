@@ -1,9 +1,9 @@
 <%= form_for @schedule do |f| %>
 <% if @schedule.errors.any? %>
 <div class="error">
-	<h2><%= Pluralize(@schedule.errors.count, "error") %> prevented this schedule from saving</h2>
+	      <h2><%=pluralize(@schedule.errors.count, "error") %> prevented this schedule from saving</h2>
 	<ul>
-		<% @schedule.errors_full_messages.each do |msg| %>
+		<% @schedule.errors.each do |msg| %>
 		<li><%= msg %></li>
 		<% end %>
 	</ul>
@@ -42,10 +42,7 @@
 	<%= f.label :staff_email %><br>
 	<%= f.text_field :staff_email %>
 </p>
-<p>
-	<%= f.label :body %><br>
-	<%= f.text_area :body %>
-</p>
+
 <p>
 	<%= f.submit %>
 </p>

@@ -1,0 +1,6 @@
+<% @staffs.each do |staff| %>
+<div class="staff_wrapper">
+	<h2 class="title"><%= link_to staff.title, staff %></h2>
+	<p class="date"><% staff.created_at.strftime("%B, %d, %Y") %></p>
+</div>
+<% end %>

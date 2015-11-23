@@ -1,16 +1,16 @@
 class CommentsController < ApplicationController
   def create
-  	@schedule = Schedule.find(params[:schedule_id])
-  	@comment = @schedule.comments.create(params[:comment].permit(:name, :body))
+  	@staff = Staff.find(params[:staff_id])
+  	@comment = @staff.comments.create(params[:comment].permit(:name, :body))
 
-  	redirect_to schedule_path(@schedule)
+  	redirect_to staff_path(@staff)
   end
 
   def destroy
-  	@schedule = Schedule.find(params[:id])
-  	@comment = @schedule.comments.find(params[:id])
+  	@staff = Staff.find(params[:id])
+  	@comment = @staff.comments.find(params[:id])
   	@comment.destroy
 
-  	redirect_to schedule_path(@schedule)
+  	redirect_to staff_path(@staff)
   end
 end

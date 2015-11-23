@@ -8,7 +8,7 @@ class HomeController < ApplicationController
   def contact
   end
 
-  def create
+  def make
   end
 
   def about

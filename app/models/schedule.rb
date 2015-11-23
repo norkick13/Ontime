@@ -8,6 +8,6 @@ class Schedule < ActiveRecord::Base
 	validates :admin_code, presence: true, length: { minimum: 4 }
 	validates_numericality_of :admin_code, :on => :create
 	validates_presence_of :admin_name, :admin_email
-	validates_presence_of :staff_fname, :staff_lname, :admin_email
+	
 
 end

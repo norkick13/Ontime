@@ -1,26 +1,28 @@
 Rails.application.routes.draw do
   
+  resources :events
+  resources :meetings
   #get 'comments/create'
 
   #get 'comments/destroy'
 
   
 
-  get '/new', to: 'schedules#new'
+  # get '/new', to: 'staffs#new'
 
-  get  '/create', to: 'schedules#create'
+  # get  '/create', to: 'staffs#create'
 
-   get '/show', to: 'schedules#show'
+  #  get '/show', to: 'staffs#show'
 
-  get  '/edit', to: 'schedule#edit'
+  # get  '/edit', to: 'staffs#edit'
 
-  get '/update', to: 'schedule#update'
+  # get '/update', to: 'staffs#update'
 
-  get '/destroy', to: 'schedule#destroy'
+  # get '/destroy', to: 'staffs#destroy'
   
-root 'schedules#index'
+root 'staffs#index'
 
-  resources :schedules do
+  resources :staffs do
     resources :comments
   end
 
@@ -30,7 +32,7 @@ root 'schedules#index'
 
   get  '/contact', to:  'home#contact'
 
-  get  '/create', to: 'home#create'
+  get  '/make', to: 'home#make'
 
   get   '/about', to: 'home#about'
   
@@ -67,9 +69,9 @@ root 'schedules#index'
 
   devise_for :users
 
- resources :admins do
-  resources :staffs
-end
+ #resources :admins do
+  #resources :staffs
+#end
 
  
   #get 'user/new'

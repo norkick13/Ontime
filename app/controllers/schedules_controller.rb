@@ -26,7 +26,7 @@ end
 
   def update
     @schedule = Schedule.find(params[:id])
-
+ #if @schedule.update(params{:schedule}.permit(:title, :body))
     if @schedule.update(schedule_params)
       redirect_to schedules_path
     else
@@ -44,6 +44,6 @@ end
   private
 
   def schedule_params
-    params.require(:schedule).permit(:admin_code, :admin_name, :admin_email, :staff_fname, :staff_lname, :staff_email, :body, :title)
+    params.require(:schedule).permit(:admin_code, :admin_name, :admin_email, :staff_fname, :staff_lname, :staff_email, :title, :body)
    end
 end

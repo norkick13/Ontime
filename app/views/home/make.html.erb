@@ -1,0 +1,31 @@
+<%#the idea is to create a page that gives option to make staff_schedule or user(personal shedule). so this page leads you to either ;
+1,staff_schedule page
+or
+2, user page
+
+# so when u are on any of this pages. u gives a form to fill that gives you the option to make mulyiple staffs ...for staff 
+
+# or a user page that you only fill your own info in..%>
+
+<%# we might need to create controllers for the "staff-schedule" and user scdele" n new, edit, create, destroy for each..
+
+<%# lets start%>
+
+<h2><strong>Make Your Schedule</strong></h2>
+<p>(a). Click on Personal to make your personal schedule 
+</p>
+<p>(a). Click on Staff to create your staff schedule 
+</p>
+
+
+
+<div class="buttuon">
+<button class="button"><%= link_to "My Staff", new_staff_path %></button>
+<button class="button">Personal</button>
+</div>
+
+
+
+
+
+

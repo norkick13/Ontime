@@ -2,12 +2,8 @@
 
 one:
   name: MyString
-  email: MyString
-  title: MyString
-  body: MyString
+  start_time: 2015-11-23 12:58:45
 
 two:
   name: MyString
-  email: MyString
-  title: MyString
-  body: MyString
+  start_time: 2015-11-23 12:58:45

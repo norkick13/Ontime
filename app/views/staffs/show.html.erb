@@ -1,0 +1,35 @@
+<div id="staff_content">
+<h1 class="title">
+    <%= @staff.title %>
+</h1>
+
+<h2 class="name">
+   <%= @staff.name %>
+</h2>
+
+<h2 class="email">
+<%= @staff.email %>
+</h2>
+
+
+<p class="date">
+submitted <%= time_ago_in_words(@staff.created_at) %> Ago
+<% if user_signed_in? %>
+| <%=link_to 'Edit', edit_staff_path(@staff) %>
+| <%= link_to 'Delete', staff_path(@staff), method: :delete, data: {confirm: 'Are You Sure?'} %>
+<% end %>
+</p>
+
+<p class="body">
+<%= @staff.body %>
+</p>
+
+<div id="comments">
+<h2><%= @staff.comments.count %> Comments</h2>
+<%= render @staff.comments %>
+
+<h3>Add a comment:</h3>
+<%= render "comments/form" %>
+
+</div>
+</div>
